@@ -8,7 +8,7 @@ import { SpecificError } from '../../models/ErrorData';
  * @param {number} timer setTimeout delay to simulate laoding
  * @param {string} Factory factory pattern name calling the object constructor pattern
  * @param {string} apiType api type for the factory pattern
- * @returns
+ * @returns {React.ReactElement} array with fetch datas and all other states
  */
 const FetchData = (url, timer, Factory, apiType) => {
   const [data, setdata] = useState();
