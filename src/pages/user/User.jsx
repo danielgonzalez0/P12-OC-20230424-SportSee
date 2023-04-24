@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Router = () => {
+const User = () => {
+
   return (
     <div>
-      <h1>Router</h1>
+      <h1>User page</h1>
     </div>
   );
 };
 
-export default Router;
+export default User;
