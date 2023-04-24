@@ -1,7 +1,16 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { SpecificError } from '../../models/ErrorData';
 
-const FetchData = (url, timer) => {
+/**
+ * custom hook used to fetch data from a type of api into a react component
+ * @param {string} url api url for reading data
+ * @param {number} timer setTimeout delay to simulate laoding
+ * @param {string} Factory factory pattern name calling the object constructor pattern
+ * @param {string} apiType api type for the factory pattern
+ * @returns
+ */
+const FetchData = (url, timer, Factory, apiType) => {
   const [data, setdata] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -12,19 +21,25 @@ const FetchData = (url, timer) => {
       .get(url)
       .then((res) => {
         setTimeout(() => {
-          setdata(res.data);
+          const userData = new Factory(res.data, apiType);
+          if (userData instanceof SpecificError === false) {
+            setdata(userData);
+          } else {
+            setIsError(true);
+            setError(userData);
+          }
           setIsLoading(false);
         }, timer);
       })
-      .catch((error) => {
-        console.log(error.AxiosError);
+      .catch((err) => {
+        console.log(err);
         setTimeout(() => {
           setIsError(true);
-          setError(error);
+          setError(err);
           setIsLoading(false);
         }, timer);
       });
-  }, [url, timer]);
+  }, [url, timer, Factory, apiType]);
 
   return [data, isLoading, isError, error];
 };
