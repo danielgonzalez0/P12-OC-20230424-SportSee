@@ -1,29 +1,28 @@
 @font-face {
-    font-family: 'roboto-700';
-    src: url(../assets/fonts/Roboto-Bold.ttf);
+  font-family: 'roboto-700';
+  src: url(../assets/fonts/Roboto-Bold.ttf);
 }
 @font-face {
-    font-family: 'roboto-500';
-    src: url(../assets/fonts/Roboto-Medium.ttf);
+  font-family: 'roboto-500';
+  src: url(../assets/fonts/Roboto-Medium.ttf);
 }
 @font-face {
-    font-family: 'roboto-400';
-    src: url(../assets/fonts/Roboto-Regular.ttf);
+  font-family: 'roboto-400';
+  src: url(../assets/fonts/Roboto-Regular.ttf);
 }
 
-
-$font700: "roboto-700", sans-serif;
-$font500: "roboto-500", sans-serif;
-$font400: "roboto-400", sans-serif;
-$red1: rgb(255, 1, 1);
+$font700: 'roboto-700', sans-serif;
+$font500: 'roboto-500', sans-serif;
+$font400: 'roboto-400', sans-serif;
+$red1: rgb(255, 0, 0);
 $red2: rgb(230, 0, 0);
 $white1: rgb(255, 255, 255);
 $white2: rgb(251, 251, 251);
 $black1: rgb(2, 2, 3);
 $black2: rgb(40, 45, 48);
+$black3: rgb(32, 37, 58);
 $grey1: rgb(116, 121, 140);
 $grey2: rgb(155, 158, 172);
-
 
 :export {
   red1: $red1;
@@ -34,6 +33,9 @@ $grey2: rgb(155, 158, 172);
   black2: $black2;
   grey1: $grey1;
   grey2: $grey2;
+  font700: $font700;
+  font500: $font500;
+  font400: $font400;
 }
 
 * {
@@ -42,10 +44,10 @@ $grey2: rgb(155, 158, 172);
   box-sizing: border-box;
 }
 
-body{
-    background-color: rgb(255, 255, 255);
-    font-family: $font500;
-    font-weight: 500;
+body {
+  background-color: rgb(255, 255, 255);
+  font-family: $font500;
+  font-weight: 500;
 }
 
 html {

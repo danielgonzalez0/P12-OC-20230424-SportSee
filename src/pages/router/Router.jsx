@@ -3,6 +3,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import User from '../user/User';
 import Home from '../home/Home';
 
+/**
+ * React component given the application routes structure
+ * @returns {React.ReactElement} Router
+ */
 const Router = () => {
   return (
     <BrowserRouter>

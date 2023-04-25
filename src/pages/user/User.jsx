@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ * React component given the structure of developer user infos
+ * @returns {React.ReactElement} User
+ */
 const User = () => {
 
   return (
