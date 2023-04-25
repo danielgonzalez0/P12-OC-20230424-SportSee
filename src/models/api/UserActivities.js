@@ -1,6 +1,6 @@
 import { SessionActivity } from "../SessionActivity";
 
-export class UserActivity {
+export class UserActivities {
   constructor(data) {
     this._id = data.userId;
     this._sessions = data.sessions;
