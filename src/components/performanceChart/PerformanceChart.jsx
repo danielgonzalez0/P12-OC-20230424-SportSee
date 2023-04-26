@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import FetchData from '../customHook/FetchData';
 import { UserPerformanceFactory } from '../../factories/UserPerformanceFactory';
+import variables from '../../styles/_settings.scss';
 
 /**
  * React component given the structure HTML of the chart performance
@@ -9,6 +10,7 @@ import { UserPerformanceFactory } from '../../factories/UserPerformanceFactory';
  * @returns {React.ReactElement} PerformanceChart
  */
 const PerformanceChart = ({ userId }) => {
+  const [dataArray, setDataArray] = useState([]);
   const url = '/mockedDatas/performance.json';
 
   const [data, isLoading, isError, error] = FetchData(
@@ -17,6 +19,23 @@ const PerformanceChart = ({ userId }) => {
     UserPerformanceFactory,
     'api'
   );
+
+  useEffect(() => {
+    if (!isNaN(userId) && data) {
+      console.log(data.data);
+      // let chartData = [
+      //   data.data.map((data, index) => {
+      //     return {
+      //       subject: data.kind,
+      //       A: data.value,
+      //       fullMark: 150,
+      //     };
+      //   }),
+      // ];
+      // setDataArray(chartData);
+      console.log(dataArray);
+    }
+  }, [userId, data, dataArray]);
 
   if (isLoading) return <p>Données en cours de chargement</p>;
 

@@ -1,0 +1,43 @@
+.todayScoreChart-container {
+  width: 258px;
+  height: 263px;
+  background: $white2;
+  border-radius: 5px;
+  position: relative;
+
+     h4 {
+    position: absolute;
+    font-family: $font500;
+    font-size: 15px;
+    color: $black3;
+    top:12%;
+    left: 14%;
+  }
+
+  .recharts-legend-wrapper {
+    background: $white1;
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 200px;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+    .todayScore {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: $font500;
+      font-size: 16px;
+      color: $grey1;
+      line-height: 26px;
+
+      p:first-of-type {
+        font-family: $font700;
+        font-size: 26px;
+        color: $black2;
+      }
+    }
+  }
+}
