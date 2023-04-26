@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 import FetchData from '../customHook/FetchData';
 import { UserPerformanceFactory } from '../../factories/UserPerformanceFactory';
 import variables from '../../styles/_settings.scss';
+import {
+  PolarAngleAxis,
+  PolarGrid,
+  Radar,
+  RadarChart,
+  ResponsiveContainer,
+} from 'recharts';
 
 /**
  * React component given the structure HTML of the chart performance
@@ -22,20 +29,20 @@ const PerformanceChart = ({ userId }) => {
 
   useEffect(() => {
     if (!isNaN(userId) && data) {
-      console.log(data.data);
-      // let chartData = [
-      //   data.data.map((data, index) => {
-      //     return {
-      //       subject: data.kind,
-      //       A: data.value,
-      //       fullMark: 150,
-      //     };
-      //   }),
-      // ];
-      // setDataArray(chartData);
-      console.log(dataArray);
+      const sortList = [
+        'Intensité',
+        'Vitesse',
+        'Force',
+        'Endurance',
+        'Energie',
+        'Cardio',
+      ];
+      const sortedPerf = data.data.sort((a, b) => {
+        return sortList.indexOf(a.kind) - sortList.indexOf(b.kind);
+      });
+      setDataArray(sortedPerf);
     }
-  }, [userId, data, dataArray]);
+  }, [userId, data]);
 
   if (isLoading) return <p>Données en cours de chargement</p>;
 
@@ -49,15 +56,19 @@ const PerformanceChart = ({ userId }) => {
 
   return (
     <div className="performanceChart-container">
-      <p>Performance Chart</p>
-      <p>{userId}</p>
-      <ul>
-        {data.data.map((data, index) => (
-          <li key={index}>
-            kind: {data.kind} value: {data.value}
-          </li>
-        ))}
-      </ul>
+      <ResponsiveContainer width="100%" height="100%">
+        <RadarChart cx="50%" cy="50%" data={dataArray} outerRadius={85}>
+          <PolarGrid stroke={variables.white1} radialLines={false} />
+          <PolarAngleAxis
+            dataKey="kind"
+            stroke={variables.white1}
+            fontSize={12}
+            fontFamily={variables.font500}
+            tickLine={false}
+          />
+          <Radar dataKey="value" fill={variables.red1} fillOpacity={0.7} />
+        </RadarChart>
+      </ResponsiveContainer>
     </div>
   );
 };

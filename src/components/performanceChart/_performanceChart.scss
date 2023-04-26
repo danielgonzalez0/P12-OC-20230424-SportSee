@@ -1,0 +1,10 @@
+.performanceChart-container {
+  width: 258px;
+  height: 263px;
+  background: $black2;
+  border-radius: 5px;
+
+  .recharts-polar-angle-axis-tick:nth-child(4){
+     transform: translateY(10px);
+  }
+}

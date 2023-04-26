@@ -23,7 +23,6 @@ const TodayScoreChart = ({ score }) => {
    * @returns customized legend components
    */
   function CustomLegend(payload) {
-    console.log(payload);
     return (
       <div className="todayScore">
         <p>{payload.payload[0].payload.uv}%</p>

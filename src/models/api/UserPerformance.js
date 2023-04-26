@@ -53,9 +53,6 @@ export const kindMappingTable = (kind) => {
     { en: 'speed', fr: 'Vitesse' },
     { en: 'intensity', fr: 'Intensité' },
   ];
-  return mapping.map((mappedKind) => {
-    if (kind === mappedKind.en) {
-      return mappedKind.fr;
-    } else return null;
-  });
+  const mappedKind = mapping.filter((mappedKind) => kind === mappedKind.en);
+  return mappedKind[0].fr;
 };
