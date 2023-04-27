@@ -1,0 +1,25 @@
+.timeSessionsChart-container {
+  width: 258px;
+  height: 263px;
+  background: $red2;
+  border-radius: 5px;
+  color: rgba($white1, 0.5);
+  font-family: $font500;
+  font-size: 15px;
+
+  .graph-legend {
+    padding: 30px;
+    p {
+      line-height: 24px;
+      font-size: 15px;
+    }
+  }
+
+  .custom-tooltip {
+    color: $black1;
+    padding: 5px 10px;
+    background: $white1;
+    font-size: 8px;
+    line-height: 24px;
+  }
+}
