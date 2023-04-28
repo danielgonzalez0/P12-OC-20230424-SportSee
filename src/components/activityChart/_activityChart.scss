@@ -1,0 +1,51 @@
+.activityChart-container {
+  width: 835px;
+  height: 320px;
+  background: $white2;
+  border-radius: 5px;
+
+  .custom-tooltip {
+    background: $red2;
+    color: $white1;
+    font-size: 7px;
+    line-height: 24px;
+    p {
+      padding: 5px 10px;
+      text-align: center;
+    }
+  }
+
+  .graph-legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    p {
+      font-size: 15px;
+    }
+    ul {
+      height: 60px;
+      width: 270px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      font-size: 14px;
+      color: $grey1;
+
+      li::before {
+        content: '\2022';
+        vertical-align: middle;
+        color: $black2;
+        font-weight: bold;
+        font-size: 30px;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+      li:nth-child(2)::before {
+        color: $red2;
+      }
+    }
+  }
+}

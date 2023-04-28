@@ -5,7 +5,7 @@ import { SpecificError } from '../../models/ErrorData';
 /**
  * custom hook used to fetch data from a type of api into a react component
  * @param {string} url api url for reading data
- * @param {number} timer setTimeout delay to simulate laoding
+ * @param {number} timer setTimeout delay to simulate loading
  * @param {string} Factory factory pattern name calling the object constructor pattern
  * @param {string} apiType api type for the factory pattern
  * @returns {React.ReactElement} array with fetch datas and all other states

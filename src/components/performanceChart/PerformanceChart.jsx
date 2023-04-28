@@ -22,7 +22,7 @@ const PerformanceChart = ({ userId }) => {
 
   const [data, isLoading, isError, error] = FetchData(
     url,
-    1000,
+    3000,
     UserPerformanceFactory,
     'api'
   );
