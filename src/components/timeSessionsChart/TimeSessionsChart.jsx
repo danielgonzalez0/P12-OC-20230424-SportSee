@@ -59,6 +59,28 @@ const TimeSessionsChart = ({ userId }) => {
   };
 
   /**
+   * customize css of the chart based on x coordinate of the mouse
+   * @param {object} e mouseEvent
+   */
+  const customLineChart = (e) => {
+    const div = document.getElementsByClassName('filter')[0];
+    if (e.isTooltipActive) {
+      const activeDotX = e.activeCoordinate.x;
+      const graphContainerWidth = div.clientWidth;
+      const ratio = Math.round((activeDotX / graphContainerWidth) * 100);
+      let gradientPercentage;
+      if (ratio === 2) {
+        gradientPercentage = 0;
+      } else if (ratio === 98) {
+        gradientPercentage = 100;
+      } else {
+        gradientPercentage = ratio;
+      }
+      div.style.background = `linear-gradient(90deg, rgba(0,0,0,0) ${gradientPercentage}%, rgba(210,0,0,1) ${gradientPercentage}%)`;
+    } 
+  };
+
+  /**
    * customize the X axis of the chart
    * @param {number} x value of the x-axis of the tick
    * @param {number} y value of the y-axis of the tick
@@ -127,18 +149,39 @@ const TimeSessionsChart = ({ userId }) => {
 
   return (
     <div className="timeSessionsChart-container">
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height="100%" className="filter">
         <LineChart
           data={dataArray}
           margin={{ top: 5, right: 5, left: 5, bottom: 5 }}
+          onMouseMove={(e) => customLineChart(e)}
         >
+          <defs>
+            <linearGradient id="colorUv" x1="0" y1="0" x2="1" y2="0">
+              <stop
+                offset="20%"
+                stopColor={variables.white1}
+                stopOpacity={0.4}
+              />
+              <stop
+                offset="100%"
+                stopColor={variables.white1}
+                stopOpacity={1}
+              />
+            </linearGradient>
+          </defs>
           <Legend content={<CustomLegend />} align="left" verticalAlign="top" />
           <Line
             type="natural"
             dataKey="sessionLength"
-            stroke={variables.white1}
+            stroke="url(#colorUv)"
             strokeWidth={2}
             dot={false}
+            activeDot={{
+              stroke: 'rgba(255, 255, 255, 0.2)',
+              strokeWidth: 10,
+              r: 5,
+              fill: 'white',
+            }}
           />
           <XAxis
             dataKey="day"
@@ -149,6 +192,7 @@ const TimeSessionsChart = ({ userId }) => {
           <Tooltip
             content={<CustomTooltip />}
             wrapperStyle={{ outline: 'none' }}
+            cursor={false}
           />
         </LineChart>
       </ResponsiveContainer>
