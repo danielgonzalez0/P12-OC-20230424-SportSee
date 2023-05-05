@@ -6,6 +6,7 @@ import InfosCard from '../../components/infosCard/InfosCard';
 import PerformanceChart from '../../components/performanceChart/PerformanceChart';
 import TimeSessionsChart from '../../components/timeSessionsChart/TimeSessionsChart';
 import TodayScoreChart from '../../components/todayScoreChart/TodayScoreChart';
+import Header from '../../components/header/Header';
 
 /**
  * React component given the structure HTML of the user home page
@@ -34,6 +35,7 @@ const Home = () => {
 
   return (
     <div>
+      <Header />
       <h1>Bonjour {data.firstName}</h1>
 
       <main>
