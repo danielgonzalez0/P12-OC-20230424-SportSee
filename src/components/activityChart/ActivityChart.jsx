@@ -13,6 +13,7 @@ import {
   YAxis,
 } from 'recharts';
 import variables from '../../styles/_settings.scss';
+import Loader from '../loader/Loader';
 
 /**
  * React component given the structure HTML of the chart activity
@@ -78,7 +79,13 @@ const ActivityChart = ({ userId }) => {
     }
   }, [userId, data]);
 
-  if (isLoading) return <p>Données en cours de chargement</p>;
+  if (isLoading)
+    return (
+      <div className="loading-graph">
+        <Loader />
+        <p>Chargement</p>
+      </div>
+    );
 
   if (isError)
     return (

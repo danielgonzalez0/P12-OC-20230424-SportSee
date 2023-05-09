@@ -8,6 +8,7 @@ import TimeSessionsChart from '../../components/timeSessionsChart/TimeSessionsCh
 import TodayScoreChart from '../../components/todayScoreChart/TodayScoreChart';
 import Header from '../../components/header/Header';
 import VerticalNavBar from '../../components/vertical_navbar/VerticalNavBar';
+import Loader from '../../components/loader/Loader';
 
 /**
  * React component given the structure HTML of the user home page
@@ -24,7 +25,13 @@ const Home = () => {
     'api'
   );
 
-  if (isLoading) return <p>Données en cours de chargement</p>;
+  if (isLoading)
+    return (
+      <div className="loading">
+        <Loader />
+        <p>Chargement</p>
+      </div>
+    );
 
   if (isError)
     return (

@@ -7,6 +7,7 @@ import {
 } from 'recharts';
 import PropTypes from 'prop-types';
 import variables from '../../styles/_settings.scss';
+import Loader from '../loader/Loader';
 
 /**
  * React component given the structure HTML of the chart performance
@@ -50,7 +51,13 @@ const TodayScoreChart = ({ score }) => {
   }, [score]);
 
   //JSX
-  if (isLoading) return <p>En cours de chargement</p>;
+  if (isLoading)
+    return (
+      <div className="loading-graph">
+        <Loader />
+        <p>Chargement</p>
+      </div>
+    );
 
   if (!isLoading)
     return (

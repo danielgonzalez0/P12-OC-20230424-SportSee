@@ -11,6 +11,7 @@ import {
   Tooltip,
   XAxis,
 } from 'recharts';
+import Loader from '../loader/Loader';
 
 /**
  * React component given the structure HTML of the chart with sessions informations
@@ -121,7 +122,7 @@ const TimeSessionsChart = ({ userId }) => {
       <g transform={`translate(${x},${y})`}>
         <text
           x={0}
-          y={"-5"}
+          y={'-5'}
           dy={12}
           fontSize={12}
           textAnchor="middle"
@@ -139,7 +140,13 @@ const TimeSessionsChart = ({ userId }) => {
     }
   }, [userId, data]);
 
-  if (isLoading) return <p>Données en cours de chargement</p>;
+  if (isLoading)
+    return (
+      <div className="loading-graph">
+        <Loader />
+        <p>Chargement</p>
+      </div>
+    );
 
   if (isError)
     return (

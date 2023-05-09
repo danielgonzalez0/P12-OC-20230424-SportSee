@@ -10,6 +10,7 @@ import {
   RadarChart,
   ResponsiveContainer,
 } from 'recharts';
+import Loader from '../loader/Loader';
 
 /**
  * React component given the structure HTML of the chart performance
@@ -44,7 +45,13 @@ const PerformanceChart = ({ userId }) => {
     }
   }, [userId, data]);
 
-  if (isLoading) return <p>Données en cours de chargement</p>;
+  if (isLoading)
+    return (
+      <div className="loading-graph">
+        <Loader />
+        <p>Chargement</p>
+      </div>
+    );
 
   if (isError)
     return (
@@ -57,12 +64,7 @@ const PerformanceChart = ({ userId }) => {
   return (
     <div className="performanceChart-container">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart
-          cx="50%"
-          cy="50%"
-          data={dataArray}
-          outerRadius={"65%"}
-        >
+        <RadarChart cx="50%" cy="50%" data={dataArray} outerRadius={'65%'}>
           <PolarGrid stroke={variables.white1} radialLines={false} />
           <PolarAngleAxis
             dataKey="kind"
