@@ -46,7 +46,7 @@ const TodayScoreChart = ({ score }) => {
         },
       ];
       setDataArray(chartData);
-      setTimeout(() => setIsLoading(false), 1000);
+      setTimeout(() => setIsLoading(false), 2500);
     }
   }, [score]);
 

@@ -26,7 +26,7 @@ const ActivityChart = ({ userId }) => {
 
   const [data, isLoading, isError, error] = FetchData(
     url,
-    1000,
+    2000,
     UserActivitiesFactory,
     'api'
   );

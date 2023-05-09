@@ -35,7 +35,7 @@ const FetchData = (url, timer, Factory, apiType) => {
         console.log(err);
         setTimeout(() => {
           setIsError(true);
-          setError(err);
+          setError(new SpecificError('Erreur 404', 'Données non disponibles'));
           setIsLoading(false);
         }, timer);
       });

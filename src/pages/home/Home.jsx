@@ -20,7 +20,7 @@ const Home = () => {
 
   const [data, isLoading, isError, error] = FetchData(
     url,
-    1000,
+    2000,
     UserInfosFactory,
     'api'
   );
@@ -35,7 +35,7 @@ const Home = () => {
 
   if (isError)
     return (
-      <div className="error-container">
+      <div className="home-error-container">
         <p>{error.name}</p>
         <p>{error.message}</p>
       </div>

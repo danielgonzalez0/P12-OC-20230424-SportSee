@@ -7,10 +7,7 @@ export class UserInfosFactory {
       if (type === 'api') {
         return new UserInfos(data);
       } else {
-        throw new SpecificError(
-          'Erreur Modelisation',
-          'type de format de modelisation inconnu'
-        );
+        throw new SpecificError('Erreur 400', 'Données non disponibles');
       }
     } catch (err) {
       return err;

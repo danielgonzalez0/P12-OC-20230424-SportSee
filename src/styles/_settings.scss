@@ -63,14 +63,27 @@ a:visited {
   text-decoration: none;
 }
 
-.loading-graph {
+.loading-graph,
+.error-container {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.loading-graph {
   p {
     padding: 20px 0;
+  }
+}
+
+.error-container {
+  text-align: center;
+  p:first-child {
+    color: $red1;
+    font-size: 25px;
+    padding: 15px 0;
   }
 }

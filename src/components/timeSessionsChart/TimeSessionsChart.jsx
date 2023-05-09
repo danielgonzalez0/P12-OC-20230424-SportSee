@@ -24,7 +24,7 @@ const TimeSessionsChart = ({ userId }) => {
 
   const [data, isLoading, isError, error] = FetchData(
     url,
-    1000,
+    1500,
     UserSessionsFactory,
     'api'
   );
@@ -183,6 +183,9 @@ const TimeSessionsChart = ({ userId }) => {
             type="natural"
             dataKey="sessionLength"
             stroke="url(#colorUv)"
+            isAnimationActive={true}
+            animationEasing="ease-in-out"
+            animationDuration="2000"
             strokeWidth={2}
             dot={false}
             activeDot={{
