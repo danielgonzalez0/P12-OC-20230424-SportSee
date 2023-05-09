@@ -1,10 +1,20 @@
 .performanceChart-container {
-  width: 258px;
-  height: 263px;
+  width: 100%;
+  grid-area: performance;
+  // max-width: 258px;
+  min-width: 150px;
+  aspect-ratio: 1/1;
   background: $black2;
   border-radius: 5px;
+  justify-self: center;
 
-  .recharts-polar-angle-axis-tick:nth-child(4){
-     transform: translateY(10px);
+  .recharts-polar-angle-axis-tick:nth-child(4) {
+    transform: translateY(10px);
+  }
+
+  @media screen and (max-width: 1100px) {
+    text {
+      font-size: 11px !important;
+    }
   }
 }

@@ -1,11 +1,15 @@
 .timeSessionsChart-container {
-  width: 258px;
-  height: 263px;
+  grid-area: duration;
+  width: 100%;
+  // max-width: 258px;
+  min-width: 150px;
+  aspect-ratio: 1/1;
   background: $red2;
   border-radius: 5px;
   color: rgba($white1, 0.5);
   font-family: $font500;
   font-size: 15px;
+  border-radius: 5px;
 
   .graph-legend {
     padding: 30px;
@@ -21,5 +25,15 @@
     background: $white1;
     font-size: 8px;
     line-height: 24px;
+  }
+
+  @media screen and (max-width: 1100px) {
+    .graph-legend {
+      padding: 15px;
+      p {
+        line-height: 24px;
+        font-size: 12px;
+      }
+    }
   }
 }

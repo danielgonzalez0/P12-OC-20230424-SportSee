@@ -1,5 +1,6 @@
 .activityChart-container {
-  width: 835px;
+  grid-area: activity;
+  width: 100%;
   height: 320px;
   background: $white2;
   border-radius: 5px;

@@ -57,7 +57,12 @@ const PerformanceChart = ({ userId }) => {
   return (
     <div className="performanceChart-container">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" data={dataArray} outerRadius={85}>
+        <RadarChart
+          cx="50%"
+          cy="50%"
+          data={dataArray}
+          outerRadius={"65%"}
+        >
           <PolarGrid stroke={variables.white1} radialLines={false} />
           <PolarAngleAxis
             dataKey="kind"

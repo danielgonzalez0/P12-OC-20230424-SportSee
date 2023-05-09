@@ -1,6 +1,9 @@
 @import './settings';
 @import '../components/header/header';
+@import '../components/vertical_navbar/verticalNavBar';
 @import '../components/todayScoreChart/todayScoreChart';
 @import '../components/performanceChart/performanceChart';
 @import '../components/timeSessionsChart/timeSessionsChart';
 @import '../components/activityChart/activityChart';
+@import '../components/infosCard/infosCard';
+@import '../pages/home/home';

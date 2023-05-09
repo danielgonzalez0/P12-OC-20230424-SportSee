@@ -1,23 +1,27 @@
 .todayScoreChart-container {
-  width: 258px;
-  height: 263px;
+  grid-area: score;
+  width: 100%;
+  min-width: 150px;
+  aspect-ratio: 1/1;
   background: $white2;
   border-radius: 5px;
   position: relative;
+  justify-self: end;
 
-     h4 {
+  h4 {
     position: absolute;
     font-family: $font500;
     font-size: 15px;
     color: $black3;
-    top:12%;
-    left: 14%;
+    top: 10px;
+    left: 14px;
+    z-index: 2;
   }
 
   .recharts-legend-wrapper {
     background: $white1;
-    width: 150px !important;
-    height: 150px !important;
+    width: 140px !important;
+    height: 140px !important;
     border-radius: 200px;
     left: 50% !important;
     top: 50% !important;

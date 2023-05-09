@@ -7,6 +7,7 @@ import PerformanceChart from '../../components/performanceChart/PerformanceChart
 import TimeSessionsChart from '../../components/timeSessionsChart/TimeSessionsChart';
 import TodayScoreChart from '../../components/todayScoreChart/TodayScoreChart';
 import Header from '../../components/header/Header';
+import VerticalNavBar from '../../components/vertical_navbar/VerticalNavBar';
 
 /**
  * React component given the structure HTML of the user home page
@@ -34,23 +35,32 @@ const Home = () => {
     );
 
   return (
-    <div>
+    <>
       <Header />
-      <h1>Bonjour {data.firstName}</h1>
-
-      <main>
-        <ActivityChart userId={userId} />
-        <PerformanceChart userId={userId} />
-        <TimeSessionsChart userId={userId} />
-        <TodayScoreChart score={data.todayScore} />
-      </main>
-      <InfosCard
-        calorie={data.calorieCount}
-        protein={data.proteinCount}
-        glucid={data.carbohydrateCount}
-        lipid={data.lipidCount}
-      />
-    </div>
+      <VerticalNavBar />
+      <div className="home-container">
+        <div className="title-container">
+          <h1>
+            Bonjour <span>{data.firstName}</span>
+          </h1>
+          <p>Félicitation ! Vous avez explosé vos objectifs hier &#128079;</p>
+        </div>
+        <div className="main-container">
+          <main>
+            <ActivityChart userId={userId} />
+            <PerformanceChart userId={userId} />
+            <TimeSessionsChart userId={userId} />
+            <TodayScoreChart score={data.todayScore} />
+          </main>
+          <InfosCard
+            calorie={data.calorieCount}
+            protein={data.proteinCount}
+            glucid={data.carbohydrateCount}
+            lipid={data.lipidCount}
+          />
+        </div>
+      </div>
+    </>
   );
 };
 

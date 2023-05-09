@@ -71,13 +71,15 @@ const TimeSessionsChart = ({ userId }) => {
       let gradientPercentage;
       if (ratio === 2) {
         gradientPercentage = 0;
-      } else if (ratio === 98) {
+      } else if (ratio === 96) {
         gradientPercentage = 100;
       } else {
         gradientPercentage = ratio;
       }
       div.style.background = `linear-gradient(90deg, rgba(0,0,0,0) ${gradientPercentage}%, rgba(210,0,0,1) ${gradientPercentage}%)`;
-    } 
+    } else {
+      div.style.background = '';
+    }
   };
 
   /**
@@ -109,7 +111,7 @@ const TimeSessionsChart = ({ userId }) => {
         payload.value = 'S';
         break;
       case 7:
-        x = 250;
+        // x = 240;
         payload.value = 'D';
         break;
       default:
@@ -119,7 +121,7 @@ const TimeSessionsChart = ({ userId }) => {
       <g transform={`translate(${x},${y})`}>
         <text
           x={0}
-          y={0}
+          y={"-5"}
           dy={12}
           fontSize={12}
           textAnchor="middle"
@@ -152,7 +154,7 @@ const TimeSessionsChart = ({ userId }) => {
       <ResponsiveContainer width="100%" height="100%" className="filter">
         <LineChart
           data={dataArray}
-          margin={{ top: 5, right: 5, left: 5, bottom: 5 }}
+          margin={{ top: 5, right: 10, left: 5, bottom: 5 }}
           onMouseMove={(e) => customLineChart(e)}
         >
           <defs>

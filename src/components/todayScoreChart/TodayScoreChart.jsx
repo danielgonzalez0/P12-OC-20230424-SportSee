@@ -32,7 +32,6 @@ const TodayScoreChart = ({ score }) => {
     );
   }
 
-
   useEffect(() => {
     if (!isNaN(score)) {
       let chartData = [
@@ -59,13 +58,13 @@ const TodayScoreChart = ({ score }) => {
         <h4>Score</h4>
         <ResponsiveContainer>
           <RadialBarChart
-            innerRadius={80}
-            outerRadius={100}
+            innerRadius={75}
+            outerRadius={95}
             startAngle={90}
             endAngle={470}
             data={dataArray}
           >
-            <RadialBar dataKey="uv" cornerRadius={100}/>
+            <RadialBar dataKey="uv" cornerRadius={100} />
             <Legend content={<CustomLegend />} />
           </RadialBarChart>
         </ResponsiveContainer>
