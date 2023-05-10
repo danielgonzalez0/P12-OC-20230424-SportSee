@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import User from '../user/User';
+import User from '../user_activity/UserActivityInfos';
 import Home from '../home/Home';
 
 /**
@@ -12,7 +12,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/user/:id" element={<User />} />
+        <Route path="/user/:id/activity" element={<User />} />
       </Routes>
     </BrowserRouter>
   );

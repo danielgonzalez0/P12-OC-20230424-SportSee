@@ -16,7 +16,8 @@ import Loader from '../../components/loader/Loader';
  */
 const Home = () => {
   const userId = 18;
-  const url = '/mockedDatas/userInfos.json';
+  // const url = '/mockedDatas/userInfos.json';
+  const url = `http://localhost:3000/user/${userId}`;
 
   const [data, isLoading, isError, error] = FetchData(
     url,

@@ -1,10 +1,10 @@
 import { PerformanceData } from '../PerformanceData';
 
 export class UserPerformance {
-  constructor(data) {
-    this._id = data.userId;
-    this._kind = data.kind;
-    this._data = data.data;
+  constructor(user) {
+    this._id = user.data.userId;
+    this._kind = user.data.kind;
+    this._data = user.data.data;
   }
 
   get id() {

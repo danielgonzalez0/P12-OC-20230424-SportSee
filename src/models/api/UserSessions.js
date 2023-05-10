@@ -1,9 +1,9 @@
 import { SessionDuration } from '../SessionDuration';
 
 export class UserSessions {
-  constructor(data) {
-    this._id = data.userId;
-    this._sessions = data.sessions;
+  constructor(user) {
+    this._id = user.data.userId;
+    this._sessions = user.data.sessions;
   }
 
   get id() {

@@ -23,6 +23,7 @@ aside {
       flex-direction: column;
       justify-content: center;
       margin-left: 10%;
+      width: 90%;
 
       h4 {
         font-size: 20px;
@@ -36,8 +37,21 @@ aside {
     }
   }
 
+  @media screen and (max-width: 1300px) {
+    .aside-container {
+      .content {
+        h4 {
+          font-size: 15px;
+        }
 
-    @media screen and (max-width: 1200px) {
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
     .aside-container {
       max-width: 190px;
     }

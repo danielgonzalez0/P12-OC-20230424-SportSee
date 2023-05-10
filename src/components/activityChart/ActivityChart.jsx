@@ -21,7 +21,9 @@ import Loader from '../loader/Loader';
  * @returns {React.ReactElement} ActivityChart
  */
 const ActivityChart = ({ userId }) => {
-  const url = '/mockedDatas/activity.json';
+  // const url = '/mockedDatas/activity.json';
+  const url = `http://localhost:3000/user/${userId}/activity`;
+
   const [dataArray, setDataArray] = useState([]);
 
   const [data, isLoading, isError, error] = FetchData(

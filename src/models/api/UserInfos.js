@@ -1,15 +1,15 @@
 export class UserInfos {
-  constructor(data) {
-    this._id = data.id;
-    this._firstName = data.userInfos.firstName;
-    this._lastName = data.userInfos.lastName;
-    this._age = data.userInfos.age;
-    this._todayScore = data.todayScore;
-    this._score = data.score;
-    this._calorieCount = data.keyData.calorieCount;
-    this._proteinCount = data.keyData.proteinCount;
-    this._carbohydrateCount = data.keyData.carbohydrateCount;
-    this._lipidCount = data.keyData.lipidCount;
+  constructor(user) {
+    this._id = user.data.id;
+    this._firstName = user.data.userInfos.firstName;
+    this._lastName = user.data.userInfos.lastName;
+    this._age = user.data.userInfos.age;
+    this._todayScore = user.data.todayScore;
+    this._score = user.data.score;
+    this._calorieCount = user.data.keyData.calorieCount;
+    this._proteinCount = user.data.keyData.proteinCount;
+    this._carbohydrateCount = user.data.keyData.carbohydrateCount;
+    this._lipidCount = user.data.keyData.lipidCount;
   }
 
   get id() {

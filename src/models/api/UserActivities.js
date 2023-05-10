@@ -1,9 +1,9 @@
-import { SessionActivity } from "../SessionActivity";
+import { SessionActivity } from '../SessionActivity';
 
 export class UserActivities {
-  constructor(data) {
-    this._id = data.userId;
-    this._sessions = data.sessions;
+  constructor(user) {
+    this._id = user.data.userId;
+    this._sessions = user.data.sessions;
   }
 
   get id() {
