@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { UserPerformanceFactory } from '../../factories/UserPerformanceFactory';
 import FetchData from '../../components/customHook/FetchData';
-import { UserActivitiesFactory } from '../../factories/UserActivitiesFactory';
 import Loader from '../../components/loader/Loader';
 
 /**
- * React component given informations of user activity
- * @returns {React.ReactElement} User
+ * React component given user performance data
+ * @returns {React.ReactElement} UserInfosDev
  */
-const UserActivityInfos = () => {
+const UserPerformanceDev = () => {
   const userId = useParams().id;
-  const url = `http://localhost:3000/user/${userId}/activity`;
+  const url = `http://localhost:3000/user/${userId}/performance`;
   const [dataArray, setDataArray] = useState([]);
 
   const [data, isLoading, isError, error] = FetchData(
     url,
     1,
-    UserActivitiesFactory,
+    UserPerformanceFactory,
     'api'
   );
 
   useEffect(() => {
     if (!isNaN(userId) && data) {
-      setDataArray(data.sessions);
+      setDataArray(data.data);
     }
   }, [userId, data]);
 
@@ -44,13 +44,12 @@ const UserActivityInfos = () => {
 
   return (
     <div>
-      <h1>User Activity page</h1>
-      <p>user id: {userId}</p>
+      <h1>User performance page</h1>
+      <p>user id : {data.id}</p>
       <ul>
         {dataArray.map((session, index) => (
           <li key={index}>
-            date : {session.day} - {session.calories} cal - {session.kilogram}{' '}
-            kg
+            {session.kind} : {session.value}
           </li>
         ))}
       </ul>
@@ -58,4 +57,4 @@ const UserActivityInfos = () => {
   );
 };
 
-export default UserActivityInfos;
+export default UserPerformanceDev;

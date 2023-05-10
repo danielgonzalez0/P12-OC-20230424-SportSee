@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import FetchData from '../../components/customHook/FetchData';
-import { UserActivitiesFactory } from '../../factories/UserActivitiesFactory';
+import { useParams } from 'react-router-dom';
+import { UserSessionsFactory } from '../../factories/UserSessionsFactory';
 import Loader from '../../components/loader/Loader';
 
 /**
- * React component given informations of user activity
- * @returns {React.ReactElement} User
+ * React component given informations of user average sessions
+ * @returns {React.ReactElement} UserSessionsDev
  */
-const UserActivityInfos = () => {
+const UserSessionsDev = () => {
   const userId = useParams().id;
-  const url = `http://localhost:3000/user/${userId}/activity`;
+  const url = `http://localhost:3000/user/${userId}/average-sessions`;
+
   const [dataArray, setDataArray] = useState([]);
 
   const [data, isLoading, isError, error] = FetchData(
     url,
-    1,
-    UserActivitiesFactory,
+    1500,
+    UserSessionsFactory,
     'api'
   );
 
@@ -44,13 +45,12 @@ const UserActivityInfos = () => {
 
   return (
     <div>
-      <h1>User Activity page</h1>
-      <p>user id: {userId}</p>
+      <h1>User average sessions infos page</h1>
+      <p>user id : {data.id}</p>
       <ul>
         {dataArray.map((session, index) => (
           <li key={index}>
-            date : {session.day} - {session.calories} cal - {session.kilogram}{' '}
-            kg
+            jour : {session.day} - durée session : {session.sessionLength}min
           </li>
         ))}
       </ul>
@@ -58,4 +58,4 @@ const UserActivityInfos = () => {
   );
 };
 
-export default UserActivityInfos;
+export default UserSessionsDev;
