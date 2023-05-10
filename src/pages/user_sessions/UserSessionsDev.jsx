@@ -16,7 +16,7 @@ const UserSessionsDev = () => {
 
   const [data, isLoading, isError, error] = FetchData(
     url,
-    1500,
+    1,
     UserSessionsFactory,
     'api'
   );
