@@ -1,46 +1,55 @@
-export class UserInfos {
+class UserInfos {
   constructor(user) {
-    this._id = user.data.id;
-    this._firstName = user.data.userInfos.firstName;
-    this._lastName = user.data.userInfos.lastName;
-    this._age = user.data.userInfos.age;
-    this._todayScore = user.data.todayScore;
-    this._score = user.data.score;
-    this._calorieCount = user.data.keyData.calorieCount;
-    this._proteinCount = user.data.keyData.proteinCount;
-    this._carbohydrateCount = user.data.keyData.carbohydrateCount;
-    this._lipidCount = user.data.keyData.lipidCount;
+    this.constructor_id = user.data.id;
+    this.constructor_firstName = user.data.userInfos.firstName;
+    this.constructor_lastName = user.data.userInfos.lastName;
+    this.constructor_age = user.data.userInfos.age;
+    this.constructor_todayScore = user.data.todayScore;
+    this.constructor_score = user.data.score;
+    this.constructor_calorieCount = user.data.keyData.calorieCount;
+    this.constructor_proteinCount = user.data.keyData.proteinCount;
+    this.constructor_carbohydrateCount = user.data.keyData.carbohydrateCount;
+    this.constructor_lipidCount = user.data.keyData.lipidCount;
   }
 
   get id() {
-    return this._id;
+    return this.constructor_id;
   }
+
   get firstName() {
-    return this._firstName;
+    return this.constructor_firstName;
   }
+
   get lastName() {
-    return this._lastName;
+    return this.constructor_lastName;
   }
+
   get age() {
-    return this._age;
+    return this.constructor_age;
   }
+
   get todayScore() {
-    if (this._todayScore) {
-      return this._todayScore;
-    } else {
-      return this._score;
+    if (this.constructor_todayScore) {
+      return this.constructor_todayScore;
     }
+    return this.constructor_score;
   }
+
   get calorieCount() {
-    return this._calorieCount;
+    return this.constructor_calorieCount;
   }
+
   get proteinCount() {
-    return this._proteinCount;
+    return this.constructor_proteinCount;
   }
+
   get carbohydrateCount() {
-    return this._carbohydrateCount;
+    return this.constructor_carbohydrateCount;
   }
+
   get lipidCount() {
-    return this._lipidCount;
+    return this.constructor_lipidCount;
   }
 }
+
+export default UserInfos;

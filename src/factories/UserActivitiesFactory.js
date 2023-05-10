@@ -1,16 +1,17 @@
-import { SpecificError } from '../models/ErrorData';
-import { UserActivities } from '../models/api/UserActivities';
+import SpecificError from '../models/ErrorData';
+import UserActivities from '../models/api/UserActivities';
 
-export class UserActivitiesFactory {
+class UserActivitiesFactory {
   constructor(data, type) {
     try {
       if (type === 'api') {
-        return new UserActivities(data);
+        this.data = new UserActivities(data);
       } else {
         throw new SpecificError('Erreur 400', 'Données non disponibles');
       }
     } catch (err) {
-      return err;
+      this.data = err;
     }
   }
 }
+export default UserActivitiesFactory;

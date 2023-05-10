@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { SpecificError } from '../../models/ErrorData';
+import SpecificError from '../../models/ErrorData';
 
 /**
  * custom hook used to fetch data from a type of api into a react component
@@ -22,11 +22,12 @@ const FetchData = (url, timer, Factory, apiType) => {
       .then((res) => {
         setTimeout(() => {
           const userData = new Factory(res.data, apiType);
-          if (userData instanceof SpecificError === false) {
-            setdata(userData);
+          if (userData.data instanceof SpecificError === false) {
+            setdata(userData.data);
           } else {
+            console.log(userData);
             setIsError(true);
-            setError(userData);
+            setError(userData.data);
           }
           setIsLoading(false);
         }, timer);

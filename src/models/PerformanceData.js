@@ -1,13 +1,16 @@
-export class PerformanceData {
+class PerformanceData {
   constructor(data) {
-    this._value = data.value;
-    this._kind = data.kind;
+    this.constructor_value = data.value;
+    this.constructor_kind = data.kind;
   }
 
   get value() {
-    return this._value;
+    return this.constructor_value;
   }
+
   get kind() {
-    return this._kind;
+    return this.constructor_kind;
   }
 }
+
+export default PerformanceData;

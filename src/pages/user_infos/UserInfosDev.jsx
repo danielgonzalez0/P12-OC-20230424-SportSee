@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import FetchData from '../../components/customHook/FetchData';
-import { UserInfosFactory } from '../../factories/UserInfosFactory';
+import UserInfosFactory from '../../factories/UserInfosFactory';
 import Loader from '../../components/loader/Loader';
 import { useParams } from 'react-router-dom';
 

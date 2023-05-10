@@ -1,16 +1,18 @@
-import { SpecificError } from '../models/ErrorData';
-import { UserSessions } from '../models/api/UserSessions';
+import SpecificError from '../models/ErrorData';
+import UserSessions from '../models/api/UserSessions';
 
-export class UserSessionsFactory {
+class UserSessionsFactory {
   constructor(data, type) {
     try {
       if (type === 'api') {
-        return new UserSessions(data);
+        this.data = new UserSessions(data);
       } else {
         throw new SpecificError('Erreur 400', 'Données non disponibles');
       }
     } catch (err) {
-      return err;
+      this.data = err;
     }
   }
 }
+
+export default UserSessionsFactory;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { UserPerformanceFactory } from '../../factories/UserPerformanceFactory';
+import UserPerformanceFactory from '../../factories/UserPerformanceFactory';
 import FetchData from '../../components/customHook/FetchData';
 import Loader from '../../components/loader/Loader';
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import FetchData from '../../components/customHook/FetchData';
 import { useParams } from 'react-router-dom';
-import { UserSessionsFactory } from '../../factories/UserSessionsFactory';
+import UserSessionsFactory from '../../factories/UserSessionsFactory';
 import Loader from '../../components/loader/Loader';
 
 /**

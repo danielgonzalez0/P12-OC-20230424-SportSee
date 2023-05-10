@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import FetchData from '../../components/customHook/FetchData';
-import { UserActivitiesFactory } from '../../factories/UserActivitiesFactory';
+import UserActivitiesFactory from '../../factories/UserActivitiesFactory';
 import Loader from '../../components/loader/Loader';
 
 /**

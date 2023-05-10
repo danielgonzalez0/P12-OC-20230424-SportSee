@@ -1,16 +1,17 @@
-import { SessionDuration } from '../SessionDuration';
+import SessionDuration from '../SessionDuration';
 
-export class UserSessions {
+class UserSessions {
   constructor(user) {
-    this._id = user.data.userId;
-    this._sessions = user.data.sessions;
+    this.constructor_id = user.data.userId;
+    this.constructor_sessions = user.data.sessions;
   }
 
   get id() {
-    return this._id;
+    return this.constructor_id;
   }
+
   get sessions() {
-    let arrayOfSessions = this._sessions.map((session) => {
+    const arrayOfSessions = this.constructor_sessions.map((session) => {
       const data = new SessionDuration(session);
       return { day: data.day, sessionLength: data.sessionLength };
     });
@@ -18,4 +19,4 @@ export class UserSessions {
   }
 }
 
-
+export default UserSessions;

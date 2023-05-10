@@ -1,6 +1,6 @@
 import React from 'react';
 import FetchData from '../../components/customHook/FetchData';
-import { UserInfosFactory } from '../../factories/UserInfosFactory';
+import UserInfosFactory from '../../factories/UserInfosFactory';
 import ActivityChart from '../../components/activityChart/ActivityChart';
 import InfosCard from '../../components/infosCard/InfosCard';
 import PerformanceChart from '../../components/performanceChart/PerformanceChart';

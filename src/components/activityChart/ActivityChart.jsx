@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { UserActivitiesFactory } from '../../factories/UserActivitiesFactory';
+import UserActivitiesFactory from '../../factories/UserActivitiesFactory';
 import FetchData from '../customHook/FetchData';
 import {
   Bar,
@@ -77,6 +77,8 @@ const ActivityChart = ({ userId }) => {
 
   useEffect(() => {
     if (!isNaN(userId) && data) {
+      console.log(data);
+      console.log(isError);
       setDataArray(data.sessions);
     }
   }, [userId, data]);

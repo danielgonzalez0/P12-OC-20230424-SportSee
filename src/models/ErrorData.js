@@ -1,17 +1,19 @@
 /**
  * create a customized error
  */
-export class SpecificError {
+class SpecificError {
   constructor(name, message) {
-    this._message = message;
-    this._name = name;
+    this.constructor_message = message;
+    this.constructor_name = name;
   }
 
   get message() {
-    return this._message;
+    return this.constructor_message;
   }
 
   get name() {
-    return this._name;
+    return this.constructor_name;
   }
 }
+
+export default SpecificError;

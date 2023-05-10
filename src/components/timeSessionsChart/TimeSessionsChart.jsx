@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import FetchData from '../customHook/FetchData';
-import { UserSessionsFactory } from '../../factories/UserSessionsFactory';
+import UserSessionsFactory from '../../factories/UserSessionsFactory';
 import variables from '../../styles/_settings.scss';
 import {
   Legend,

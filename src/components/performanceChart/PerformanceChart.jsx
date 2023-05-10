@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import FetchData from '../customHook/FetchData';
-import { UserPerformanceFactory } from '../../factories/UserPerformanceFactory';
+import UserPerformanceFactory  from '../../factories/UserPerformanceFactory';
 import variables from '../../styles/_settings.scss';
 import {
   PolarAngleAxis,

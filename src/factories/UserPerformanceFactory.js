@@ -1,16 +1,18 @@
-import { SpecificError } from '../models/ErrorData';
-import { UserPerformance } from '../models/api/UserPerformance';
+import SpecificError from '../models/ErrorData';
+import UserPerformance from '../models/api/UserPerformance';
 
-export class UserPerformanceFactory {
+class UserPerformanceFactory {
   constructor(data, type) {
     try {
       if (type === 'api') {
-        return new UserPerformance(data);
+        this.data = new UserPerformance(data);
       } else {
         throw new SpecificError('Erreur 400', 'Données non disponibles');
       }
     } catch (err) {
-      return err;
+      this.data = err;
     }
   }
 }
+
+export default UserPerformanceFactory;

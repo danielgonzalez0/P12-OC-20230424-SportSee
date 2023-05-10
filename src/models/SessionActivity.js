@@ -1,17 +1,21 @@
-export class SessionActivity {
+class SessionActivity {
   constructor(data) {
-    this._day = data.day;
-    this._kilogram = data.kilogram;
-    this._calories = data.calories;
+    this.constructor_day = data.day;
+    this.constructor_kilogram = data.kilogram;
+    this.constructor_calories = data.calories;
   }
 
   get day() {
-    return this._day;
+    return this.constructor_day;
   }
+
   get kilogram() {
-    return this._kilogram;
+    return this.constructor_kilogram;
   }
+
   get calories() {
-    return this._calories;
+    return this.constructor_calories;
   }
 }
+
+export default SessionActivity;

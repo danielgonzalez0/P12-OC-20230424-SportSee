@@ -1,18 +1,21 @@
-import { SessionActivity } from '../SessionActivity';
+import SessionActivity from '../SessionActivity';
 
-export class UserActivities {
+class UserActivities {
   constructor(user) {
-    this._id = user.data.userId;
-    this._sessions = user.data.sessions;
+    this.constructor_id = user.data.userId;
+    this.constructor_sessions = user.data.sessions;
   }
 
   get id() {
-    return this._id;
+    return this.constructor_id;
   }
+
   get sessions() {
-    let arrayOfSessions = this._sessions.map(
-      (session) => new SessionActivity(session)
+    const arrayOfSessions = this.constructor_sessions.map(
+      (session) => new SessionActivity(session),
     );
     return arrayOfSessions;
   }
 }
+
+export default UserActivities;
