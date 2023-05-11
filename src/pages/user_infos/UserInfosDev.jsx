@@ -4,10 +4,10 @@ import UserInfosFactory from '../../factories/UserInfosFactory';
 import Loader from '../../components/loader/Loader';
 import { useParams } from 'react-router-dom';
 
-  /**
-   * React component given general informations of the user 
-   * @returns {React.ReactElement} UserInfosDev
-   */
+/**
+ * React component given general informations of the user
+ * @returns {React.ReactElement} UserInfosDev
+ */
 const UserInfosDev = () => {
   const userId = useParams().id;
   const url = `http://localhost:3000/user/${userId}`;
@@ -17,7 +17,7 @@ const UserInfosDev = () => {
     url,
     1,
     UserInfosFactory,
-    'api'
+    'ap'
   );
 
   useEffect(() => {

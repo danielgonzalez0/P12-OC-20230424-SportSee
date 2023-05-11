@@ -25,7 +25,6 @@ const FetchData = (url, timer, Factory, apiType) => {
           if (userData.data instanceof SpecificError === false) {
             setdata(userData.data);
           } else {
-            console.log(userData);
             setIsError(true);
             setError(userData.data);
           }
@@ -33,7 +32,6 @@ const FetchData = (url, timer, Factory, apiType) => {
         }, timer);
       })
       .catch((err) => {
-        console.log(err);
         setTimeout(() => {
           setIsError(true);
           setError(new SpecificError('Erreur 404', 'Données non disponibles'));

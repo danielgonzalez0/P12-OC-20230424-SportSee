@@ -5,6 +5,7 @@
   },
   "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb"],
   "overrides": [],
+
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
