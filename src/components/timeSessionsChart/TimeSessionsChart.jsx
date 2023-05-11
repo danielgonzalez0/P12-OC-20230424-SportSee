@@ -36,9 +36,8 @@ const TimeSessionsChart = ({ userId }) => {
    * https://recharts.org/en-US/api/Tooltip
    * @param {Boolean} active If set true, the tooltip is displayed. If set false, the tooltip is hidden
    * @param {object} payload array of the content to be displayed in the tooltip
-   * @param {string} label label value which is active
    */
-  const CustomTooltip = ({ active, payload, label }) => {
+  const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
         <div className="custom-tooltip">
@@ -46,6 +45,11 @@ const TimeSessionsChart = ({ userId }) => {
         </div>
       );
     }
+  };
+
+  CustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array,
   };
 
   /**

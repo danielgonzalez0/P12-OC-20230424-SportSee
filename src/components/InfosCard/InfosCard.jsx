@@ -6,8 +6,11 @@ import lipidIcon from './fat-icon.png';
 import PropTypes from 'prop-types';
 
 /**
- * React component given the structure HTML of the image carousel
- * @param {PropTypes} userId id of the user connected
+ * React component given the structure HTML of the user general datas
+ * @param {PropTypes} calorie count of calories of the user connected
+ * @param {PropTypes} protein count of proteins of the user connected
+ * @param {PropTypes} glucid count of glucids of the user connected
+ * @param {PropTypes} lipid count of lipids of the user connected
  * @returns {React.ReactElement} InfosCard
  */
 const InfosCard = ({ calorie, protein, glucid, lipid }) => {
@@ -46,7 +49,10 @@ const InfosCard = ({ calorie, protein, glucid, lipid }) => {
 };
 
 InfosCard.propTypes = {
-  userId: PropTypes.number,
+  calorie: PropTypes.number,
+  protein: PropTypes.number,
+  glucid: PropTypes.number,
+  lipid: PropTypes.number,
 };
 
 export default InfosCard;

@@ -31,7 +31,7 @@ const FetchData = (url, timer, Factory, apiType) => {
           setIsLoading(false);
         }, timer);
       })
-      .catch((err) => {
+      .catch(() => {
         setTimeout(() => {
           setIsError(true);
           setError(new SpecificError('Erreur 404', 'Données non disponibles'));
