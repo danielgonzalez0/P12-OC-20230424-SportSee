@@ -17,7 +17,7 @@ const UserInfosDev = () => {
     url,
     1,
     UserInfosFactory,
-    'ap'
+    'api'
   );
 
   useEffect(() => {
