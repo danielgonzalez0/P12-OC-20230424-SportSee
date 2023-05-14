@@ -6,7 +6,7 @@ import Loader from '../../components/loader/Loader';
 
 /**
  * React component given informations of user activity
- * @returns {React.ReactElement} User
+ * @returns {React.ReactElement} UserActivityInfos
  */
 const UserActivityInfos = () => {
   const userId = useParams().id;
@@ -22,7 +22,17 @@ const UserActivityInfos = () => {
 
   useEffect(() => {
     if (!isNaN(userId) && data) {
-      setDataArray(data.sessions);
+      const activity = {
+        id: data.id,
+        sessions: data.sessions.map((session) => {
+          return {
+            day: session.day,
+            kilogram: session.kilogram,
+            calories: session.calories,
+          };
+        }),
+      };
+      setDataArray(activity);
     }
   }, [userId, data]);
 
@@ -43,17 +53,10 @@ const UserActivityInfos = () => {
     );
 
   return (
-    <div>
-      <h1>User Activity page</h1>
-      <p>user id: {userId}</p>
-      <ul>
-        {dataArray.map((session, index) => (
-          <li key={index}>
-            date : {session.day} - {session.calories} cal - {session.kilogram}{' '}
-            kg
-          </li>
-        ))}
-      </ul>
+    <div className="json">
+      <pre>
+      {JSON.stringify(dataArray, null, 2)}
+      </pre>
     </div>
   );
 };

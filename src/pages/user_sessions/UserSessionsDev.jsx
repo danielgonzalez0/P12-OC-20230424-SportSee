@@ -44,16 +44,8 @@ const UserSessionsDev = () => {
     );
 
   return (
-    <div>
-      <h1>User average sessions infos page</h1>
-      <p>user id : {data.id}</p>
-      <ul>
-        {dataArray.map((session, index) => (
-          <li key={index}>
-            jour : {session.day} - durée session : {session.sessionLength}min
-          </li>
-        ))}
-      </ul>
+    <div className="json">
+      <pre>{JSON.stringify(dataArray, null, 2)}</pre>
     </div>
   );
 };

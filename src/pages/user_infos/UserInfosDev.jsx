@@ -22,7 +22,18 @@ const UserInfosDev = () => {
 
   useEffect(() => {
     if (!isNaN(userId) && data) {
-      setDataArray(data);
+      const infos = {
+        id: data.id,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        age: data.age,
+        todayScore: data.todayScore,
+        calorieCount: data.calorieCount,
+        proteinCount: data.proteinCount,
+        carbohydrateCount: data.carbohydrateCount,
+        lipidCount: data.lipidCount,
+      };
+      setDataArray(infos);
     }
   }, [userId, data]);
 
@@ -43,19 +54,8 @@ const UserInfosDev = () => {
     );
 
   return (
-    <div>
-      <h1>User Infos page</h1>
-      <ul>
-        <li>user id: {dataArray.id}</li>
-        <li>prénom: {dataArray.firstName}</li>
-        <li>nom : {dataArray.lastName}</li>
-        <li>age: {dataArray.age}</li>
-        <li>calories: {dataArray.calorieCount}kCal</li>
-        <li>protéines: {dataArray.proteinCount}g</li>
-        <li>glucides: {dataArray.carbohydrateCount}g</li>
-        <li>lipides: {dataArray.lipidCount}g</li>
-        <li>objectif du jour: {dataArray.todayScore * 100}%</li>
-      </ul>
+    <div className="json">
+      <pre>{JSON.stringify(dataArray, null, 2)}</pre>
     </div>
   );
 };

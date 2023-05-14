@@ -39,7 +39,7 @@ ps: backend have to be launch before
 
 ## Tech Stack
 
-**Client:** React, react-router-dom, , axios, Sass, esLint, Prop-types, Recharts
+**Client:** React, react-router-dom, axios, Sass, esLint, Prop-types, Recharts
 
 **Server:** see backend repository [link](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 
