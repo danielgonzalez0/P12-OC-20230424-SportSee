@@ -19,8 +19,8 @@ import Loader from '../loader/Loader';
  * @returns {React.ReactElement} TimeSessionsChart
  */
 const TimeSessionsChart = ({ userId }) => {
-  // const url = '/mockedDatas/sessionsDuration.json';
-  const url = `http://localhost:3000/user/${userId}/average-sessions`;
+  const url = '/mockedDatas/sessionsDuration.json';
+  // const url = `http://localhost:3000/user/${userId}/average-sessions`;
 
   const [dataArray, setDataArray] = useState([]);
 

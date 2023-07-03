@@ -19,8 +19,8 @@ import Loader from '../loader/Loader';
  */
 const PerformanceChart = ({ userId }) => {
   const [dataArray, setDataArray] = useState([]);
-  // const url = '/mockedDatas/performance.json';
-  const url = `http://localhost:3000/user/${userId}/performance`;
+  const url = '/mockedDatas/performance.json';
+  // const url = `http://localhost:3000/user/${userId}/performance`;
 
   const [data, isLoading, isError, error] = FetchData(
     url,
